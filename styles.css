@@ -1,156 +1,112 @@
+/* Base styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #121212;
-    color: #E0E0E0;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #0D1117;
+    color: #C9D1D9;
+    transition: all 0.3s ease;
 }
 
-h2, h3 {
-    color: #FFFFFF;
-    margin-bottom: 1rem;
-}
-
-.slide-in {
-    animation: slideIn 0.5s ease-out;
-}
-
-.calculator, .subscription-list {
-    background-color: #1E1E1E;
+.container {
+    max-width: 800px;
+    margin: 30px auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: #161B22;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 2rem;
+    color: #58A6FF;
     margin-bottom: 20px;
-    transition: background-color 0.3s;
+    text-align: center;
+    background: linear-gradient(90deg, #58A6FF, #FF7B72);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 2s ease-out;
 }
 
-label {
-    color: #BDBDBD;
-    display: block;
-    margin-bottom: 0.5rem;
+.calculator, .subscription-list, #result {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: #0D1117;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-input[type="number"], select {
-    background-color: #333;
-    color: #FFF;
-    border: 1px solid #555;
-    border-radius: 5px;
-    padding: 10px;
+input[type="number"], select, button {
     width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #30363D;
+    border-radius: 6px;
     box-sizing: border-box;
-    margin-bottom: 1rem;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    background-color: #161B22;
+    color: #C9D1D9;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 input[type="number"]:focus, select:focus {
     outline: none;
-    border: 1px solid #2979FF;
-    box-shadow: 0 0 8px #2979FF;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-color: #58A6FF;
+    box-shadow: 0 0 0 2px #1F6FEB;
 }
 
 button {
-    background-color: #2979FF;
+    background-color: #238636;
     color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    display: inline-block;
-    width: auto;
-    margin-top: 0.5rem;
 }
 
-button:hover, button:focus {
-    background-color: #5390ff;
-    outline: none;
-}
-
-#result {
-    background-color: #424242;
-    color: #FFF;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 20px;
-    animation: fadeIn 1s ease-in-out;
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 2px #1F6FEB;
 }
 
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin-top: 1rem;
 }
 
 ul li {
-    position: relative;
-    padding-right: 60px;
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #333;
-    background-color: #1E1E1E; /* Ensure background matches the container */
-    transition: background-color 0.3s;
-    animation: slideIn 0.5s ease-out; /* Apply the slideIn animation */
+    align-items: center;
+    margin-bottom: 10px;
 }
-
 
 .delete-btn {
-    background-color: #ff5252;
-    color: white;
+    background-color: #F85149;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 6px;
     padding: 5px 10px;
-    margin-left: 10px;
-    transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    visibility: hidden;
-    opacity: 0;
-}
-
-ul li:hover .delete-btn {
-    visibility: visible;
-    opacity: 1;
-}
-
-ul li:hover {
-    background-color: #292929;
+    cursor: pointer;
+    color: white;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
+    0% { transform: translateX(-20px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 10px;
+        margin: 10px;
+        padding: 15px;
     }
 
-    h2, h3 {
-        margin-top: 1rem;
+    h2 {
+        font-size: 1.5rem;
     }
 }
