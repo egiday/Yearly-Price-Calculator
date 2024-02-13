@@ -24,6 +24,7 @@ h2 {
     text-align: center;
     background: linear-gradient(90deg, #58A6FF, #FF7B72);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fadeIn 2s ease-out;
 }
