@@ -33,22 +33,3 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Analytics Fact
-
-Did you know that the Yearly Price Calculator has helped thousands of users accurately calculate the yearly price of their products? Try it out today and see the difference it can make!
-
-## Usage
-
-1. Open the Yearly Price Calculator application.
-2. Enter the monthly price of the product.
-3. Click on the "Calculate" button.
-4. The yearly price will be displayed on the screen.
-
-## Contributing
-
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
