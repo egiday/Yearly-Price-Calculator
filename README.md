@@ -1,24 +1,9 @@
 # Yearly Price Calculator
 
-This is a simple calculator that helps you calculate the yearly price of a product or service based on its monthly price.
+The Yearly Price Calculator is a simple web application that allows users to calculate the yearly price of a product or service based on its monthly price. This can be useful for budgeting purposes or comparing pricing options.
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/yearly-price-calculator.git`
-2. Navigate to the project directory: `cd yearly-price-calculator`
-3. Install the dependencies: `npm install`
+To use the Yearly Price Calculator, follow these steps:
 
-## Usage
-
-1. Open the `index.html` file in your web browser.
-2. Enter the monthly price of the product or service.
-3. Click the "Calculate" button to see the yearly price.
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
+1. Clone the repository to your local machine using the following command:
