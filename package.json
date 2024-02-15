@@ -1,0 +1,29 @@
+{
+  "name": "ypc",
+  "version": "1.0.0",
+  "description": "A desktop app for managing and visualizing subscription costs, built with Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egiday/Yearly-Price-Calculator.git"
+  },
+  "keywords": [
+    "subscription",
+    "calculator"
+  ],
+  "author": "Degife",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egiday/Yearly-Price-Calculator/issues"
+  },
+  "homepage": "https://github.com/egiday/Yearly-Price-Calculator#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "electron": "^28.2.3"
+  }
+}
