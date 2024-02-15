@@ -15,7 +15,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     /* Glow effect */
-    box-shadow: 0 0 20px rgba(88, 166, 255, 0.5); /* Subtle blue glow */
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.5); /* Subtle blue glow */
 }
 
 /* Styling for titles */
@@ -25,6 +25,7 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
+
 
 /* Input Group Styling */
 .input-group label {
