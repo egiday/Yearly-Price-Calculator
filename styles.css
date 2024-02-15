@@ -3,19 +3,22 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    background: #0D1117;
+    background: #47008e;
     color: #C9D1D9;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 960px;
     margin: auto;
-    background: #161B22;
+    background: rgba(22, 27, 34, 0.8);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    /* Glow effect */
-    box-shadow: 0 0 10px rgba(88, 166, 255, 0.5); /* Subtle blue glow */
+    backdrop-filter: blur(10px); /* Glassmorphism effect for Safari */
+    -webkit-backdrop-filter: blur(10px); /* Glassmorphism effect for Chrome, Edge, and Opera */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border for glass effect */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Enhancing the glass effect */
 }
 
 /* Styling for titles */
@@ -35,7 +38,7 @@ body {
 }
 
 .input {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent input background */
     color: #FFF;
     border: 1px solid #555;
     border-radius: 5px;
@@ -43,6 +46,8 @@ body {
     width: 100%;
     margin-bottom: 15px;
     box-sizing: border-box;
+    backdrop-filter: blur(5px); /* Glassmorphism effect for inputs */
+    -webkit-backdrop-filter: blur(5px); /* Glassmorphism effect for inputs */
 }
 
 /* Button Styling */
@@ -57,41 +62,67 @@ body {
     width: 100%; /* Adjust if you prefer different width */
     margin: 10px 0; /* Spacing around buttons */
     transition: background-color 0.3s ease;
+    backdrop-filter: blur(4px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(4px); /* Glassmorphism effect */
 }
 
 .btn:hover {
     background-color: #2EA043;
+    transform: translateY(-2px);
 }
 
 /* Subscription List Styling */
 .subscription-list {
-    background: #0D1117;
+    background: rgba(13, 17, 23, 0.8); /* Semi-transparent for glassy look */
     padding: 20px;
     border-radius: 8px;
     margin: 20px 0;
-    /* Adding glow to subscription list container */
-    box-shadow: 0 0 20px rgba(88, 166, 255, 0.5); /* Subtle blue glow */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Enhancing the glass effect */
 }
+
 
 #subscriptions li {
     position: relative; /* Essential for absolute positioning of children */
     padding-right: 40px; 
-    background-color: #161B22;
+    background-color: rgba(22, 27, 34, 0.5); /* Semi-transparent list item background */
     color: #C9D1D9;
     padding: 10px;
     border-radius: 6px;
     margin-bottom: 10px;
     list-style-type: none; /* Removes bullet points */
     animation: slideIn 0.5s ease-out forwards;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for depth */
+    backdrop-filter: blur(5px); /* Glass effect */
+    -webkit-backdrop-filter: blur(5px); /* Glass effect */
+    transition: transform 0.2s;
 }
 
+#subscriptions li:hover {
+    transform: scale(1.02);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Result Styling */
 .result {
-    background-color: #424242;
+    background-color: rgba(66, 66, 66, 0.5); /* Semi-transparent */
     color: #FFF;
     padding: 15px;
     border-radius: 8px;
     margin-top: 20px;
+    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(5px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .delete-btn {
@@ -111,9 +142,11 @@ body {
 }
 
 .delete-btn:hover {
-    /* Enhancing glow on hover */
-    box-shadow: 0 0 12px rgba(248, 81, 73, 0.8); /* Brighter and wider glow */
+    background-color: #F85149;
+    /* Enhanced glow and lift effect on hover */
+    box-shadow: 0 0 15px rgba(248, 81, 73, 0.8);
 }
+
 
 
 /* Responsive Design */
