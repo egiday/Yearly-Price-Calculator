@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var subscriptions = [];
     var subscriptionChart;
+    var editingIndex
     var categoryColors = {
         "entertainment": "#ff6384",
         "utilities": "#36a2eb",
         "health & fitness": "#ffcd56",
         "education": "#fd6b19",
-        "food & dining": "#4bc0c0",
+        "food   & dining": "#4bc0c0",
         "shopping & retail": "#9d32a8",
         "travel": "#c9cbcf",
         "finance & investment": "#ff9f40",
@@ -37,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChartWithData(); // Update chart with new data
     }
     
-
-    // Function to display subscriptions
     function displaySubscriptions() {
         var list = document.getElementById('subscriptions');
         list.innerHTML = '';
@@ -47,6 +46,15 @@ document.addEventListener('DOMContentLoaded', function() {
             item.classList.add('slide-in');
             item.textContent = `${sub.category.toUpperCase()}: ${sub.type.charAt(0).toUpperCase() + sub.type.slice(1)} subscription - $${sub.rate}, Start Date: ${sub.startDate.toDateString()}`;
             
+            // Edit button
+            var editBtn = document.createElement('button');
+            editBtn.textContent = 'Edit';
+            editBtn.classList.add('edit-btn');
+            editBtn.setAttribute('data-index', index);
+            editBtn.onclick = function() { editSubscription(index); };
+            item.appendChild(editBtn);
+    
+            // Delete button
             var deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'Delete';
             deleteBtn.classList.add('delete-btn');
@@ -57,6 +65,67 @@ document.addEventListener('DOMContentLoaded', function() {
             list.appendChild(item);
         });
     }
+
+    function populateEditCategorySelect() {
+        var editCategorySelect = document.getElementById('editCategory');
+        editCategorySelect.innerHTML = ''; // Clear existing options first
+    
+        Object.keys(categoryColors).forEach(function(category) {
+            var option = document.createElement('option');
+            option.value = category;
+            option.text = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()); // Format and capitalize
+            editCategorySelect.appendChild(option);
+        });
+    }
+    
+    
+    function editSubscription(index) {
+        editingIndex = index; // Store the index of the subscription being edited
+        var sub = subscriptions[index];
+        
+        populateEditCategorySelect(); // Ensure category options are populated
+    
+        // Set modal fields to current subscription values
+        document.getElementById('editSubscriptionType').value = sub.type;
+        document.getElementById('editCategory').value = sub.category;
+        document.getElementById('editRate').value = sub.rate;
+        document.getElementById('editStartDate').value = sub.startDate.toISOString().substring(0, 10);
+    
+        // Show the modal
+        document.getElementById('editModal').style.display = 'block';
+    }
+    
+    document.getElementById('saveEditBtn').onclick = function() {
+        if (editingIndex !== -1) {
+            // Retrieve updated values from the modal form
+            var updatedType = document.getElementById('editSubscriptionType').value;
+            var updatedCategory = document.getElementById('editCategory').value;
+            var updatedRate = parseFloat(document.getElementById('editRate').value);
+            var updatedStartDate = document.getElementById('editStartDate').value;
+    
+            // Update the subscription in the array
+            subscriptions[editingIndex] = {
+                type: updatedType,
+                rate: updatedRate,
+                startDate: new Date(updatedStartDate),
+                category: updatedCategory
+            };
+    
+            displaySubscriptions(); // Refresh the subscription list
+            updateChartWithData(); // Update the chart if necessary
+            document.getElementById('editModal').style.display = 'none'; // Hide the modal
+            editingIndex = -1; // Reset the editing index
+        }
+    };
+    
+    // Optional: Close modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('editModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+    
     
     // Function to remove a subscription
     function removeSubscription(event) {
@@ -66,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChartWithData(); // Refresh chart data
     }
 
+    
     // Function to calculate the total yearly cost
     function calculateTotalYearlyCost() {
         var total = subscriptions.reduce(function(acc, sub) {

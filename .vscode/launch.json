@@ -5,7 +5,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome",
-      "url": "/index.html",
+      "url": "C:\\Users\\degif\\Downloads\\Yearly Price Calculator\\index.html",
       "webRoot": "${workspaceFolder}"
     }
   ]

@@ -63,6 +63,37 @@
         <canvas id="subscriptionChart"></canvas>
     </div>
 
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Edit Subscription</h2>
+            <form id="editForm">
+                <div class="input-group">
+                    <label for="editSubscriptionType">Subscription Type:</label>
+                    <select id="editSubscriptionType" class="input">
+                        <option value="monthly">Monthly</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="yearly">Yearly</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="editCategory">Category:</label>
+                    <select id="editCategory" class="input"></select> <!-- Categories will be populated from JS -->
+                </div>
+                <div class="input-group">
+                    <label for="editRate">Rate:</label>
+                    <input type="number" id="editRate" class="input">
+                </div>
+                <div class="input-group">
+                    <label for="editStartDate">Start Date:</label>
+                    <input type="date" id="editStartDate" class="input">
+                </div>
+                <button type="button" id="saveEditBtn" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+
     
     
 </div>

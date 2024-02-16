@@ -3,7 +3,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    background: #47008e;
+    background: rgb(122, 144, 169);
     color: #C9D1D9;
     overflow-x: hidden;
 }
@@ -85,7 +85,7 @@ body {
 
 #subscriptions li {
     position: relative; /* Essential for absolute positioning of children */
-    padding-right: 40px; 
+    padding-right: 90px; /* Increased to provide space for both buttons */
     background-color: rgba(22, 27, 34, 0.5); /* Semi-transparent list item background */
     color: #C9D1D9;
     padding: 10px;
@@ -127,8 +127,8 @@ body {
 
 .delete-btn {
     position: absolute;
-    right: 10px; /* Adjust as necessary to move closer or farther from the right edge */
-    top: 50%; /* Centers the button vertically */
+    right: 10px;
+    top: 50%;
     transform: translateY(-50%);
     background-color: #F85149;
     color: white;
@@ -137,8 +137,7 @@ body {
     padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.2s, box-shadow 0.2s;
-    /* Glow effect */
-    box-shadow: 0 0 8px rgba(248, 81, 73, 0.5); /* Matching glow color to the button background */
+    box-shadow: 0 0 8px rgba(248, 81, 73, 0.5);
 }
 
 .delete-btn:hover {
@@ -147,6 +146,68 @@ body {
     box-shadow: 0 0 15px rgba(248, 81, 73, 0.8);
 }
 
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0,0.8); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    backdrop-filter: blur(10px); /* Glassmorphism effect for Safari */
+    -webkit-backdrop-filter: blur(10px); /* Glassmorphism effect for Chrome, Edge, and Opera */
+    
+}
+
+.modal-content {
+    background-color: rgba(122, 144, 169, 0.2);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px; /* Optional: for rounded corners */
+    
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.edit-btn {
+    position: absolute;
+    right: 75px; /* Adjusted to create space between edit and delete buttons */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #4978f8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 8px rgba(73, 163, 248, 0.5);
+}
+
+.edit-btn:hover {
+    background-color: #4960f8;
+    /* Enhanced glow and lift effect on hover */
+    box-shadow: 0 0 15px rgba(73, 105, 248, 0.8);
+}
 
 
 /* Responsive Design */
