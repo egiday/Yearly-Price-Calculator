@@ -13,7 +13,7 @@ The Yearly Price Calculator is an intuitive tool designed to help users manage a
 
 Follow these steps to set up the Yearly Price Calculator locally:
 
-1. Clone the repository: `git clone https://github.com/your-username/yearly-price-calculator.git`
+1. Clone the repository: `git clone https://github.com/egiday/yearly-price-calculator.git`
 2. Navigate to the project directory:`cd yearly-price-calculator `
 3. Install dependencies: `npm install `
 4. Start the application: `npm start `
